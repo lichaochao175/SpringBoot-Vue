@@ -1,0 +1,27 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    username: root
+    password: root123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cstate?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+  rabbitmq:
+    listener:
+      simple:
+        acknowledge-mode: manual #手动应答
+        prefetch: 1 #每次只推送一个信息
+  profiles:
+    active: test
+mybatis-plus:
+  configuration:
+    aggressive-lazy-loading: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+rabbitmq:
+  publisher-returns: true
+  publisher-confirm-type: correlated #新版本 publisher-confirms: true 已过时
+
+
+
+

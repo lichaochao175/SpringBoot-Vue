@@ -1,0 +1,24 @@
+http://localhost:8082/mq/multiSend
+Content-Type: application/json
+Accept: application/json
+
+### 创建订单
+POST http://localhost:8082/mq/push
+Content-Type: application/json
+Accept: application/json
+
+{
+  "order":[
+    {
+      "userId": "20",
+      "orderName": "http请求订单",
+      "checkName": "李超超"
+    }
+  ]
+}
+
+### 查询队列中所有数据
+http://localhost:8082/mq/getAlll
+Content-Type: application/json
+Accept: application/json
+
