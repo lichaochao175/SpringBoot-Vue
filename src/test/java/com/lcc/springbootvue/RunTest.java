@@ -5,6 +5,7 @@ import com.lcc.springbootvue.domain.vo.CheckVO;
 import com.lcc.springbootvue.mapper.UserDao;
 import com.lcc.springbootvue.service.impl.TecommerceOrderServiceImpl;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -24,6 +25,7 @@ import java.util.List;
  **/
 @SpringBootTest
 @RunWith(SpringRunner.class)
+@Slf4j
 public class RunTest {
     @Autowired
     TecommerceOrderServiceImpl tecommerceOrderService;
@@ -80,5 +82,18 @@ public class RunTest {
         System.out.println(times.toString());
     }
 
+
+    @Test
+    public  void Thread(){
+        log.info("测试开始");
+        int  i =3;
+        for (int j =0 ; j <i;j++) {
+             if( j == 1){
+                 log.info("开始处理"+j);
+                  int k = 1/0;
+                  log.info("报错信息"+j);
+             }
+        }
+    }
 
 }
