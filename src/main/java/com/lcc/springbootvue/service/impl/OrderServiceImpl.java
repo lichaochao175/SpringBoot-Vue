@@ -15,11 +15,11 @@ import java.util.stream.Collectors;
  * @data 2022/7/1 7:56 PM
  **/
 @Service
-public class OrderServiceImpl  extends ServiceImpl<OrderDao , Order>implements OrderService {
+public class OrderServiceImpl  extends ServiceImpl<OrderDao, Order> implements OrderService {
     private OrderDao  orderDao;
 
     @Autowired
-    public OrderServiceImpl (OrderDao  orderDao){
+    public OrderServiceImpl (OrderDao orderDao){
         this.orderDao = orderDao;
     }
 

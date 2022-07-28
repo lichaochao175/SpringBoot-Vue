@@ -10,9 +10,13 @@ import java.util.List;
  **/
 public class MenuTree {
 
-    // 承载菜单的列表
+    /**
+     *承载菜单的列表
+     */
     private List<Menu> menuList = new ArrayList<>();
-    // 带参构造器，将数据库中的菜单数据记录，装载在我们承载菜单的列表中
+    /***
+     *   带参构造器，将数据库中的菜单数据记录，装载在我们承载菜单的列表中
+     */
     public MenuTree(List<Menu> menuList){
         this.menuList = menuList;
     }

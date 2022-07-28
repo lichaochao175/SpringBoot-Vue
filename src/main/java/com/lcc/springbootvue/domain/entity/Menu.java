@@ -14,13 +14,14 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Menu {
-
-//    @ApiModelProperty("菜单ID")
+    //@ApiModelProperty("菜单ID")
     private String id;
-//    @ApiModelProperty("菜单名称")
+    /**
+     *
+     */
     private String name;
-//    @ApiModelProperty("上级菜单ID")
+    //@ApiModelProperty("上级菜单ID")
     private String pId;
-//    @ApiModelProperty("下级菜单集合")
+    //@ApiModelProperty("下级菜单集合")
     private List<Menu> children;
 }

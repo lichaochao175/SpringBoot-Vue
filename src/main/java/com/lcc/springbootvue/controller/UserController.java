@@ -33,6 +33,11 @@ public class UserController {
 
     }
 
+    /**
+     * 校验账号密码
+     * @param userDto
+     * @return
+     */
     @PostMapping("/checkLogin")
     public Resp checkLogin(@RequestBody UserDto userDto){
         return userServiceImpl.checkUser(userDto);

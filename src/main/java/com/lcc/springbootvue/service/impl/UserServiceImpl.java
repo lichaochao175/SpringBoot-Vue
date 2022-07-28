@@ -8,7 +8,6 @@ import com.lcc.springbootvue.constant.enums.ResultCodeEnum;
 import com.lcc.springbootvue.domain.entity.User;
 import com.lcc.springbootvue.domain.dto.UserDto;
 import com.lcc.springbootvue.mapper.UserDao;
-import com.lcc.springbootvue.service.OrderService;
 import com.lcc.springbootvue.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

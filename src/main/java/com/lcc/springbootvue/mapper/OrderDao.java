@@ -8,6 +8,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @author lichaochao
  * @data 2022/7/1 7:53 PM
  **/
-@Mapper
+ @Mapper
 public interface OrderDao  extends BaseMapper<Order> {
 }

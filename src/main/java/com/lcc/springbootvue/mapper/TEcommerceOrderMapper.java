@@ -2,6 +2,7 @@ package com.lcc.springbootvue.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.lcc.springbootvue.domain.entity.TEcommerceOrder;
+//import com.lcc.springbootvue.domain.vo.CheckVO;
 import com.lcc.springbootvue.domain.vo.CheckVO;
 import org.apache.ibatis.annotations.Mapper;
 
