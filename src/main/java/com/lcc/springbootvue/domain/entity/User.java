@@ -28,8 +28,8 @@ public class User  {
   private String password;
   private char sex;
   private String address;
-  private LocalDateTime createTime;
-  private LocalDateTime updateTime;
+  private  LocalDateTime createTime;
+  private  LocalDateTime updateTime;
   private char flagStatus;
   /**
    * ip地址

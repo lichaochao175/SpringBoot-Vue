@@ -34,7 +34,6 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserS
         User user = userDao.selectOne(wrapper);
         log.info("获取到对象:{}",user);
         if(ObjectUtil.isEmpty(user)){
-            // 密码不一致
             return Resp.fail(ResultCodeEnum.UNAUTHORIZED,"对象为空");
         }
         if(!user.getPassword().equals(userDto.getPassword())){

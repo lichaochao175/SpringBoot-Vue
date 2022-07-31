@@ -20,12 +20,12 @@ public class BaseTime  implements Serializable {
      */
     @TableField(value="create_time", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss", timezone = "GMT+8")
-    private LocalDateTime createTime;
+    private  LocalDateTime createTime;
     /**
      * 结束时间
      */
     @TableField(value="update_time",fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss", timezone = "GMT+8")
-    private LocalDateTime updateTime;
+    private  LocalDateTime updateTime;
 
 }

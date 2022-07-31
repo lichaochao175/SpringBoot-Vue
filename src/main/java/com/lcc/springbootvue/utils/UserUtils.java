@@ -1,7 +1,7 @@
 package com.lcc.springbootvue.utils;
 
 import com.lcc.springbootvue.domain.entity.User;
-import org.springframework.security.core.context.SecurityContextHolder;
+//import org.springframework.security.core.context.SecurityContextHolder;
 
 /**
  * @author Licc
@@ -9,7 +9,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
  */
 public class UserUtils {
 
-    public static User getLoginUser(){
-        return (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-    }
+//    public static User getLoginUser(){
+////        return (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//    }
 }

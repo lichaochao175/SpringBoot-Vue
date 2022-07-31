@@ -23,7 +23,7 @@
 //    //配置任务，多例的业务bean，耦合业务类，需要实现Job接口
 //    @Bean(name = "businessJobDetail")
 //    public JobDetailFactoryBean businessJobDetail() {
-//        LocalDateTime localDateTime = LocalDateTime.now();
+//         LocalDateTime  LocalDateTime = LocalDateTime.now();
 //        JobDetailFactoryBean jobDetailFactoryBean = new JobDetailFactoryBean();
 //        jobDetailFactoryBean.setJobClass(BusinessJob.class);
 //        //将参数传给job
