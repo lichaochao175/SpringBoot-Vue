@@ -1,6 +1,8 @@
 package com.lcc.springbootvue.domain.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.lcc.springbootvue.domain.BaseTime;
 import lombok.AllArgsConstructor;
@@ -17,6 +19,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @TableName("t_commerce_order")
 public class TEcommerceOrder  extends BaseTime {
+    private static final long serialVersionUID = 1L;
+    /**
+     * 通过雪花算法生成id
+     */
+    @TableId(type= IdType.ASSIGN_ID)
     private Integer id;
     private  Integer userId;
     @TableField("address_id")

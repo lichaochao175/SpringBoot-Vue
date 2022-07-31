@@ -1,13 +1,13 @@
 package com.lcc.springbootvue.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.lcc.springbootvue.domain.entity.Resource;
+import com.lcc.springbootvue.domain.entity.SysRoleMenu;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
  * @author Licc
- * @date 2022/7/29 6:20 AM
+ * @date 2022/7/31 11:01 PM
  */
 @Mapper
-public interface ResourceDao extends BaseMapper<Resource> {
+public interface SysRoleMenuMapper  extends BaseMapper<SysRoleMenu> {
 }

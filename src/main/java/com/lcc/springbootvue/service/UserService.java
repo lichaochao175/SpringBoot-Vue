@@ -11,5 +11,8 @@ import com.lcc.springbootvue.domain.dto.UserDto;
  **/
 public interface UserService  extends IService<User> {
 
+
+    User getUserBymobile(String mobile);
+
     Resp checkUser(UserDto userDto);
 }

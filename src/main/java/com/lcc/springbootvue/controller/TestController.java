@@ -3,7 +3,6 @@ package com.lcc.springbootvue.controller;
 import com.alibaba.fastjson.JSON;
 import com.lcc.springbootvue.constant.CachConst;
 import com.lcc.springbootvue.domain.entity.Order;
-import com.lcc.springbootvue.mapper.OrderDao;
 import com.lcc.springbootvue.service.impl.OrderServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

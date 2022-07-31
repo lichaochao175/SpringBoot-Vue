@@ -10,5 +10,5 @@ import org.apache.ibatis.annotations.Mapper;
  * @date 2022/7/28 8:30 PM
  */
 @Mapper
-public interface RoleDao  extends BaseMapper<Role> {
+public interface RoleMapper extends BaseMapper<Role> {
 }

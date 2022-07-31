@@ -2,9 +2,8 @@ package com.lcc.springbootvue;
 
 import com.lcc.springbootvue.domain.entity.User;
 import com.lcc.springbootvue.domain.vo.CheckVO;
-import com.lcc.springbootvue.mapper.UserDao;
+import com.lcc.springbootvue.mapper.UserMapper;
 import com.lcc.springbootvue.service.impl.TecommerceOrderServiceImpl;
-import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,9 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.lang.model.element.VariableElement;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -31,7 +28,7 @@ public class RunTest {
     TecommerceOrderServiceImpl tecommerceOrderService;
 
     @Autowired
-    UserDao userDao;
+    UserMapper userMapper;
 
     @Autowired
     private  RabbitTemplate rabbitTemplate;
@@ -63,7 +60,7 @@ public class RunTest {
             User user = new User();
             user.setUsername("测试人员"+1);
             user.setPassword("password"+2);
-            userDao.insert(user);
+            userMapper.insert(user);
         }
 
         Date date = new Date();

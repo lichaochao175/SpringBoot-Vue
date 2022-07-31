@@ -14,6 +14,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Menu {
+    private static final long serialVersionUID = 1L;
+
     //@ApiModelProperty("菜单ID")
     private String id;
     /**

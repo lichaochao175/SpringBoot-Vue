@@ -17,7 +17,8 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @TableName("return_order")
 public class ReturnOrder  extends BaseTime {
-  private final  static long serialVersionUID= 1L;
+
+  private static final long serialVersionUID = 1L;
 
   @TableId(type= IdType.AUTO)
   private long id;

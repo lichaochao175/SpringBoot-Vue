@@ -21,6 +21,8 @@ import java.time.LocalDateTime;
 @TableName("purchase_order")
 public class PurchaseOrder  extends BaseTime {
 
+  private static final long serialVersionUID = 1L;
+
   @TableId(type= IdType.AUTO)
   private long id;
   /**

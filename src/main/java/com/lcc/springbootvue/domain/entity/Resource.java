@@ -20,6 +20,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @TableName("sys_resource")
 public class Resource {
+
+    private static final long serialVersionUID = 1L;
     /**
      * 权限id
      */

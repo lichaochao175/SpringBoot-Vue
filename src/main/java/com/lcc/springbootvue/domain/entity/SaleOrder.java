@@ -10,8 +10,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
-
 
 /**
  *销售表 sale_order
@@ -21,7 +19,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @TableName("sale_order")
 public class SaleOrder   extends BaseTime {
-  @TableId(type= IdType.AUTO)
+  /**
+   * 通过雪花算法生成id
+   */
+  @TableId(type= IdType.ASSIGN_ID)
   private long id;
 
   /**

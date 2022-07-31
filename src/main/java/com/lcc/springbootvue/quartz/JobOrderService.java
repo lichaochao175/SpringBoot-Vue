@@ -1,7 +1,7 @@
 package com.lcc.springbootvue.quartz;
 
 import com.lcc.springbootvue.domain.entity.Order;
-import com.lcc.springbootvue.mapper.OrderDao;
+import com.lcc.springbootvue.mapper.OrderMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class JobOrderService {
     @Autowired
-    private OrderDao orderDao;
+    private OrderMapper orderMapper;
 
 
     int i = 0;
@@ -33,7 +33,7 @@ public class JobOrderService {
             order.setFlagStatus("0");
             order.setUserId(i);
         }
-        orderDao.insert(order);
+        orderMapper.insert(order);
         System.out.println("执行job");
     }
 }

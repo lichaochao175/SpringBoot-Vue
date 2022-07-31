@@ -10,6 +10,8 @@ import java.util.List;
  * @data 2022/6/20 1:54 PM
  **/
 public class TestDemo {
+
+    private static final long serialVersionUID = 1L;
     public static void main(String[] args) {
         ArrayList<Menu> menus = new ArrayList<>();
         menus.add(new Menu("1", "一级", "0", null));

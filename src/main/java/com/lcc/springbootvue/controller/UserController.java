@@ -6,6 +6,7 @@ import com.lcc.springbootvue.service.impl.UserServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -27,15 +28,25 @@ public class UserController {
     public UserController(UserServiceImpl userServiceImpl,RedisTemplate redisTemplate) {
         this.userServiceImpl = userServiceImpl;
         this.redisTemplate = redisTemplate;
-
     }
 
     /**
-     * 校验账号密码
+     * 登陆接口
      * @param userDto
      * @return
      */
-    @PostMapping("/checkLogin")
+    @PostMapping("/login")
+    public Resp login(@Validated  @RequestBody UserDto userDto){
+        return Resp.suc(userServiceImpl.login(userDto));
+    }
+
+
+    /**
+     * 认证成功返回信息
+     * @param userDto
+     * @return
+     */
+    @PostMapping("/info")
     public Resp checkLogin(@RequestBody UserDto userDto){
         return userServiceImpl.checkUser(userDto);
     }

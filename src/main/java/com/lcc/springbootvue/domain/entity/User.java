@@ -22,9 +22,14 @@ import java.time.LocalDateTime;
 @ToString
 public class User  extends BaseTime {
 
-  @TableId(type= IdType.AUTO)
+  private static final long serialVersionUID = 1L;
+  /**
+   * 通过雪花算法生成id
+   */
+  @TableId(type= IdType.ASSIGN_ID)
   private Integer id;
   private String mobile;
+  private String roleId;
   private String username;
   private String password;
   private char sex;

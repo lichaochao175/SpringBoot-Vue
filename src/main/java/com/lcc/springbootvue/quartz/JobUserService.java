@@ -1,8 +1,7 @@
 package com.lcc.springbootvue.quartz;
 
-import com.lcc.springbootvue.domain.entity.Order;
 import com.lcc.springbootvue.domain.entity.User;
-import com.lcc.springbootvue.mapper.UserDao;
+import com.lcc.springbootvue.mapper.UserMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -15,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class JobUserService {
     @Autowired
-    private UserDao userDao;
+    private UserMapper userMapper;
 
     int i = 0;
 
@@ -32,7 +31,7 @@ public class JobUserService {
             user.setUsername("测试人员1"+i);
             user.setPassword("password+"+i);
         }
-        userDao.insert(user);
+        userMapper.insert(user);
         System.out.println("执行job");
     }
 }

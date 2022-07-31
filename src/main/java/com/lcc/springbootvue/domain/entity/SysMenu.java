@@ -2,14 +2,27 @@ package com.lcc.springbootvue.domain.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * sys_menu
  * @author 
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class SysMenu implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+    /**
+     * 通过雪花算法生成id
+     */
+    @TableId(type= IdType.ASSIGN_ID)
     private Long id;
 
     /**
@@ -77,5 +90,5 @@ public class SysMenu implements Serializable {
      */
     private Date updateTime;
 
-    private static final long serialVersionUID = 1L;
+
 }

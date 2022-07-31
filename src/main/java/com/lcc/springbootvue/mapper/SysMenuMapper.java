@@ -5,7 +5,7 @@ import com.lcc.springbootvue.domain.entity.SysMenu;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface SysMenuDao  extends BaseMapper<SysMenu> {
+public interface SysMenuMapper extends BaseMapper<SysMenu> {
     int deleteByPrimaryKey(Long id);
 
     int insert(SysMenu record);

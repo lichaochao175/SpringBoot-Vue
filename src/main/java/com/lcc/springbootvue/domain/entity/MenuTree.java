@@ -10,6 +10,8 @@ import java.util.List;
  **/
 public class MenuTree {
 
+    private static final long serialVersionUID = 1L;
+
     /**
      *承载菜单的列表
      */
