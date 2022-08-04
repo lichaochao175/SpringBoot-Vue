@@ -8,6 +8,7 @@ import lombok.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+
 /**
  * @author lichaochao
  * @data 2022/7/1 8:05 PM
@@ -20,7 +21,7 @@ public class BaseTime  implements Serializable {
      */
     @TableField(value="create_time", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss", timezone = "GMT+8")
-    private  LocalDateTime createTime;
+    private LocalDateTime createTime;
     /**
      * 结束时间
      */

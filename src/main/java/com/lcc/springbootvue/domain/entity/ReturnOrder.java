@@ -10,7 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+
 
 @Data
 @AllArgsConstructor
@@ -20,8 +20,14 @@ public class ReturnOrder  extends BaseTime {
   @TableId(type= IdType.AUTO)
   private long id;
   private long originalId;
-  private long orderNum;
+  private Integer orderNum;
+  private Integer uId;
   private String targetAddress;
+  /**
+   *  订单状态：
+   *    0：已完成
+   *    1:未完成
+   */
   private String orderStatus;
   private BigDecimal orderPrice;
   private BigDecimal orderTotalPrice;
