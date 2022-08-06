@@ -1,8 +1,11 @@
 package com.lcc.springbootvue.controller;
 
+import com.lcc.springbootvue.base.Resp;
+import com.lcc.springbootvue.domain.dto.ReturnOrderTotalDto;
 import com.lcc.springbootvue.service.impl.ReturnOrderServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,5 +27,17 @@ public class ReturnOrderController {
         this.returnOrderService=returnOrderService;
     }
 
-//    @GetMapping("get")
+    /**
+     * 获取退单详情
+     * @param dto
+     * @return
+     */
+    @GetMapping("get")
+    public Resp  getReturnOrder(@Validated  ReturnOrderTotalDto dto){
+        int returnOrderNum = returnOrderService.getReturnOrderNum(dto);
+        return Resp.suc(returnOrderNum);
+    }
+
+
+
 }

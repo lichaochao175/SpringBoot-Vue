@@ -15,6 +15,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @TableName("sys_role")
 public class Role {
+     private final  static long serialVersionUID= 1L;
+
      private Integer id;
      private String name;
 }

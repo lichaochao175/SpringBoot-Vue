@@ -17,11 +17,26 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @TableName("return_order")
 public class ReturnOrder  extends BaseTime {
+  private final  static long serialVersionUID= 1L;
+
   @TableId(type= IdType.AUTO)
   private long id;
   private long originalId;
+  /**
+   * 商品id
+   */
+  private  Integer productId;
+  /**
+   * 订单数量
+   */
   private Integer orderNum;
+  /**
+   * 用户id
+   */
   private Integer uId;
+  /**
+   * 目标地址
+   */
   private String targetAddress;
   /**
    *  订单状态：
