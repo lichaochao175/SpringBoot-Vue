@@ -80,6 +80,24 @@ public class JWTUtil {
 
 
     /**
+     * 获取角色
+     * @param token
+     * @return
+     */
+    public static Integer getRole(String token) {
+        try {
+            DecodedJWT jwt = JWT.decode(token);
+            return jwt.getClaim("mobile").asInt();
+        } catch (JWTDecodeException e) {
+            return null;
+        }
+    }
+
+
+
+
+
+    /**
      * 获得token中的信息无需secret解密也能获得
      *
      * @return token中包含的用户名

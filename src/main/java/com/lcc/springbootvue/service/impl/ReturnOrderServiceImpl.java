@@ -9,7 +9,8 @@ import com.lcc.springbootvue.domain.dto.ReturnOrderTotalDto;
 import com.lcc.springbootvue.domain.entity.ReturnOrder;
 import com.lcc.springbootvue.mapper.ProductMapper;
 import com.lcc.springbootvue.mapper.ReturnOrderMapper;
-import com.lcc.springbootvue.mapper.UserDao;
+import com.lcc.springbootvue.mapper.UserMapper;
+import com.lcc.springbootvue.mapper.UserMapper;
 import com.lcc.springbootvue.service.ReturnOrderService;
 import org.springframework.stereotype.Service;
 
@@ -18,11 +19,11 @@ import java.util.List;
 @Service
 public class ReturnOrderServiceImpl extends ServiceImpl<ReturnOrderMapper, ReturnOrder> implements ReturnOrderService {
 
-    private UserDao userDao;
+    private UserMapper userDao;
     private  ReturnOrderMapper returnOrderMapper;
     private ProductMapper productMapper;
 
-    public ReturnOrderServiceImpl(UserDao userDao,ReturnOrderMapper returnOrderMapper, ProductMapper productMapper){
+    public ReturnOrderServiceImpl(UserMapper userDao,ReturnOrderMapper returnOrderMapper, ProductMapper productMapper){
         this.userDao =userDao;
         this.returnOrderMapper=returnOrderMapper;
         this.productMapper= productMapper;

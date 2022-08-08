@@ -39,6 +39,7 @@ public class ShiroConfig {
         filterMap.put("/test","anon");
         filterMap.put("/user/test","anon");
         filterMap.put("/user/login","anon");
+        filterMap.put("/user/info","anon");
 
 
         // 授权

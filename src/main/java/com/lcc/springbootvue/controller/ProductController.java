@@ -1,7 +1,8 @@
 package com.lcc.springbootvue.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.lcc.springbootvue.domain.entity.Product;
+import com.lcc.springbootvue.service.impl.ProductServiceImpl;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author lichaochao
@@ -10,4 +11,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("product")
 public class ProductController {
+
+    private ProductServiceImpl productServiceimpl;
+
+    public ProductController(ProductServiceImpl productServiceimpl){
+        this.productServiceimpl=productServiceimpl;
+    }
+
+
+    /**
+     * 测试数据入库并添加到缓存中
+     * @param product
+     * @return
+     */
+    @PostMapping("cacheInser")
+    public int   cacheTest(@RequestBody Product product){
+
+        return  productServiceimpl.inserProduct(product);
+    }
 }

@@ -6,4 +6,10 @@ package com.lcc.springbootvue.constant;
  **/
 public interface CachConst {
     String  Validatae_code_tag ="validate_code_tag";
+
+    String  USER_ID ="USER_ID";
+
+    String REDIS_PRODUCT= "product_id:";
+
+    String REDISSON_LOCK_PREFIX = "redisson_lock:";
 }

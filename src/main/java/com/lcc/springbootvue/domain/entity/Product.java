@@ -1,5 +1,8 @@
 package com.lcc.springbootvue.domain.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.lcc.springbootvue.domain.BaseTime;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,8 +18,10 @@ import java.math.BigDecimal;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@TableName("product")
 public class Product  extends BaseTime {
 
+    @TableId( value = "id" ,type = IdType.AUTO)
     private Integer id;
     /**
      * 商品名称
@@ -25,7 +30,7 @@ public class Product  extends BaseTime {
     /**
      * 分类表id
      */
-    private Integer CategoryId;
+    private Integer categoryId;
     /**
      * 商品数量(库存)
      */

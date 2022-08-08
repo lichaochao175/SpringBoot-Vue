@@ -70,6 +70,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         return Resp.suc(user);
     }
 
+
+
     /**
      *  创建token
      * @param userDto
@@ -89,7 +91,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         //获取当前角色下可以查看的菜单id
         List<Integer> ids = sysRoleMenuMapper.selectList(new QueryWrapper<SysRoleMenu>().eq("id", user.getRoleId()))
                 .stream().map(SysRoleMenu::getMenuId).collect(Collectors.toList());
-
         String token = JWTUtil.sign(user.getMobile(),user.getUsername(), user.getRoleId(), ids);
         return token;
     }

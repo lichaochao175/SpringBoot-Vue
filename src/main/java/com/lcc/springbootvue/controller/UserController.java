@@ -1,13 +1,19 @@
 package com.lcc.springbootvue.controller;
 
 import com.lcc.springbootvue.base.Resp;
+import com.lcc.springbootvue.domain.base.BaseId;
 import com.lcc.springbootvue.domain.dto.UserDto;
 import com.lcc.springbootvue.service.impl.UserServiceImpl;
+import com.lcc.springbootvue.utils.JWTUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import java.security.Security;
 
 /**
  * @author lichaochao
@@ -43,16 +49,19 @@ public class UserController {
 
     /**
      * 认证成功返回信息
-     * @param userDto
      * @return
      */
     @PostMapping("/info")
-    public Resp checkLogin(@RequestBody UserDto userDto){
-        return userServiceImpl.checkUser(userDto);
+    public Resp info(){
+        Subject subject = SecurityUtils.getSubject();
+        String token = (String)subject.getPrincipal();
+        Integer role = JWTUtil.getRole(token);
+        JWTUtil.getUsername(token);
+        return Resp.suc(token);
     }
 
     @GetMapping("/test")
-    public String checkLogin(){
+    public String checkLogin(@RequestBody  BaseId baseId){
         log.info("请求进入！！！！！");
         return  "!23124123";
     }
