@@ -22,4 +22,10 @@ public interface Consts {
     * 权限
     */
    String PERMISSIONS = "PERMISSIONS";
+
+
+   /**
+    * 获取token
+    */
+   String Authorization = "Authorization";
 }

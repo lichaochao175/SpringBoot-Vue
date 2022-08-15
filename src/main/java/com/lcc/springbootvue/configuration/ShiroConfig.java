@@ -40,7 +40,7 @@ public class ShiroConfig {
         filterMap.put("/user/test","anon");
         filterMap.put("/user/login","anon");
         filterMap.put("/user/info","anon");
-
+        filterMap.put("/product/cacheInser","anon");
 
         // 授权
         filterMap.put("/add", "perms[user:add]");

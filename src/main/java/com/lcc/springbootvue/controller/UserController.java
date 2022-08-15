@@ -3,6 +3,7 @@ package com.lcc.springbootvue.controller;
 import com.lcc.springbootvue.base.Resp;
 import com.lcc.springbootvue.domain.base.BaseId;
 import com.lcc.springbootvue.domain.dto.UserDto;
+import com.lcc.springbootvue.domain.entity.User;
 import com.lcc.springbootvue.service.impl.UserServiceImpl;
 import com.lcc.springbootvue.utils.JWTUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -55,8 +56,11 @@ public class UserController {
     public Resp info(){
         Subject subject = SecurityUtils.getSubject();
         String token = (String)subject.getPrincipal();
-        Integer role = JWTUtil.getRole(token);
-        JWTUtil.getUsername(token);
+        //校验token是否正确
+        if(JWTUtil.verify(token)){
+             return  Resp.fail("token校验失败");
+        }
+        String username = JWTUtil.getUsername(token);
         return Resp.suc(token);
     }
 
@@ -64,6 +68,11 @@ public class UserController {
     public String checkLogin(@RequestBody  BaseId baseId){
         log.info("请求进入！！！！！");
         return  "!23124123";
+    }
+
+    @PostMapping("updateUser")
+    public Resp updateUser(@RequestBody User user){
+        return  userServiceImpl.updateUser(user);
     }
 
 }

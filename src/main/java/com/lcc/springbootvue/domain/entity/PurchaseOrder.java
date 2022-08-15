@@ -29,10 +29,29 @@ public class PurchaseOrder  extends BaseTime {
    * 采购订单
    */
   private Integer orderId;
+  /**
+   * 用户id
+   */
+  private Integer uId;
+  /**
+   * 采购数量
+   */
   private long orderNum;
+  /**
+   * 目标地址
+   */
   private String targetAddress;
+  /**
+   * 订单状态
+   */
   private String orderStatus;
+  /**
+   * 订单价格
+   */
   private BigDecimal orderPrice;
+  /**
+   * 订单总量
+   */
   private BigDecimal orderTotalPrice;
 
 

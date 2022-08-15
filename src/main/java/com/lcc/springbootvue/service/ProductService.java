@@ -1,6 +1,7 @@
 package com.lcc.springbootvue.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.lcc.springbootvue.base.Resp;
 import com.lcc.springbootvue.domain.base.BaseId;
 import com.lcc.springbootvue.domain.entity.Product;
 
@@ -12,4 +13,6 @@ public interface ProductService  extends IService<Product> {
 
 
       int updateProductNum(Product product, BaseId userId);
+
+       Resp updateProductNum(Product product);
 }

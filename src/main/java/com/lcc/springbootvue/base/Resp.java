@@ -38,7 +38,7 @@ public class Resp<T> {
     }
 
     public static <T> Resp<T> of(int code, String msg) {
-        return new Resp<>(code, msg);
+        return new Resp<T>(code, msg);
     }
 
     public static <T> Resp<T> of(int code, String msg, T data) {

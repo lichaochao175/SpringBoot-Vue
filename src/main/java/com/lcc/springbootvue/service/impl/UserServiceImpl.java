@@ -71,7 +71,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     }
 
 
-
     /**
      *  创建token
      * @param userDto
@@ -93,5 +92,17 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
                 .stream().map(SysRoleMenu::getMenuId).collect(Collectors.toList());
         String token = JWTUtil.sign(user.getMobile(),user.getUsername(), user.getRoleId(), ids);
         return token;
+    }
+
+    /**
+     * 修改用户
+     * @param user
+     * @return
+     */
+    public Resp updateUser(User user){
+        if (userMapper.updateById(user) > 0){
+            return Resp.suc("修改成功") ;
+        }
+        return Resp.suc("修改失败") ;
     }
 }

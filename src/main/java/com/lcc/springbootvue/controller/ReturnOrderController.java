@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("returnOrder")
 public class ReturnOrderController {
-    private Logger log =LoggerFactory.getLogger(ReturnOrderController.class);
+    private final  Logger log =LoggerFactory.getLogger(ReturnOrderController.class);
 
-    private ReturnOrderServiceImpl returnOrderService;
+    private final  ReturnOrderServiceImpl returnOrderService;
 
     public ReturnOrderController( ReturnOrderServiceImpl returnOrderService){
         this.returnOrderService=returnOrderService;
@@ -37,7 +37,5 @@ public class ReturnOrderController {
         int returnOrderNum = returnOrderService.getReturnOrderNum(dto);
         return Resp.suc(returnOrderNum);
     }
-
-
 
 }
